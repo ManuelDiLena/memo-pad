@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+* {
+  -back-1: #003638;
+  -back-2: #055052;
+  -back-3: #F3F2C9;
+  -back-4: #53B8BB;
+
+  -new-1: #000000;
+  -new-2: #AA14F0;
+  -new-3: #BC8CF2;
+  -new-4: #EEEEEE;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #EEEEEE;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.panel {
+  background-color: #BC8CF2;
+  width: 20%;
+  padding: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.editor {
+  background-color: #EEEEEE;
+  padding: 10px;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.editor input,
+.editor textarea {
+  padding: 10px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.preview {
+  background-color: #000000;
+  color: #EEEEEE;
+  padding: 10px;
+  width: 40%;
 }
+
+.memo {
+  color: #000000;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu {
+  padding: 10px;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.btn {
+  background-color: #AA14F0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: #EEEEEE;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #7d0eb1;
+}
+
+.pinBtn {
+  background-color: #BC8CF2;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.pinBtn:hover {
+  background-color: #946ebe;
+}
+
+.activeNote {
+  background-color: #EEEEEE;
+  color: #000000;
+}
+
+.editor-textarea {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  color: #EEEEEE;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.title{
+  color: #BC8CF2;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-bottom: solid 2px #AA14F0;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: bolder;
+  outline: none;
+  background-color: transparent;
+}
+
+.search {
+  color: #000000;
+  padding: 5px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  width: 60%;
+  font-size: 16px;
+  background: #EEEEEE;
+
+}
+
+.statusCodeContainer {
+  color: #EEEEEE;
+  height: 25px;
+}
+
