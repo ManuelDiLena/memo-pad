@@ -6,7 +6,7 @@ function App() {
     id: 0,
     title: 'First memo',
     text: '# HelloWorld',
-    pinned: false,
+    pinned: true,
     created: Date.now()
   }]);
 
@@ -32,7 +32,16 @@ function App() {
         <div className='list'>
           {
             items.map((item, i) => {
-              return <div key={item.id} className='memo'>{item.title}</div>
+              return <div key={item.id} className='memo'>
+                <div>
+                  {item.title === '' ? '[No title]' : item.title.substring(0,20)}
+                </div>
+                <div>
+                  <button className='pinBtn'>
+                    {item.pinned ? 'Pinned' : 'Pin' }
+                  </button>
+                </div>
+              </div>
             })
           }
         </div>
