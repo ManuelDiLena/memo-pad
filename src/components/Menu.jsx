@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function Menu() {
-  function handleClick() {}
+export default function Menu({ onNew }) {
+  function handleClick() {
+    onNew()
+  }
 
   return (
     <div className='menu'>

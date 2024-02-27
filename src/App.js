@@ -6,21 +6,17 @@ import List from './components/List';
 import Memo from './components/Memo';
 import Editor from './components/Editor';
 import Preview from './components/Preview';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
-  const [items, setItems] = useState([{
-    id: 0,
-    title: 'First memo',
-    text: '# HelloWorld',
-    pinned: true,
-    created: Date.now()
-  }]);
+  const [items, setItems] = useState([]);
 
-  function handleClick() {
+  // Function to generate a new memo
+  function handleNew() {
     const memo = {
-      id: 1,
-      title: 'Second memo',
-      text: '# HelloWorld',
+      id: uuidv4(),
+      title: '',
+      text: '',
       pinned: false,
       created: Date.now()
     }
@@ -31,7 +27,7 @@ function App() {
   return (
     <div className='App container'>
       <Panel>
-        <Menu />
+        <Menu onNew={handleNew} />
         <List>
           {
             items.map((item, i) => {
