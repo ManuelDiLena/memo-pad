@@ -37,10 +37,13 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  border: 2px solid #AA14F0;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 .menu {
-  padding: 10px;
+  padding: 10px 0;
   text-align: right;
   display: flex;
   justify-content: space-between;
@@ -74,9 +77,11 @@
   background-color: #946ebe;
 }
 
-.activeNote {
+.activeMemo {
   background-color: #EEEEEE;
   color: #000000;
+  border-radius: 5px;
+  border: none;
 }
 
 .editor-textarea {

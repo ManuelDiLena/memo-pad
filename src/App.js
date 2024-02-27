@@ -10,6 +10,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [items, setItems] = useState([]);
+  const [copyItems, setCopyItems] = useState([]);
+  const [actualIndex, setActualIndex] = useState(-1);
 
   // Function to generate a new memo
   function handleNew() {
@@ -24,6 +26,25 @@ function App() {
     setItems([...items, memo])
   }
 
+  function handlePinned() {}
+
+  // Function to select a memo from the left panel
+  function handleSelectMemo(item, e) {
+    if (e.target.classList.contains('memo')) return
+    const index = items.findIndex(x => x === item)
+    setActualIndex(index)
+  }
+
+  // Function to display a selected memo in the editor
+  function renderEditorUI() {
+    return (
+      <>
+        <Editor item={items[actualIndex]} />
+        <Preview text={items[actualIndex].text} />
+      </>
+    )
+  }
+
   return (
     <div className='App container'>
       <Panel>
@@ -31,14 +52,22 @@ function App() {
         <List>
           {
             items.map((item, i) => {
-              return <Memo key={item.id} item={item} />
+              return <Memo 
+                key={item.id}
+                actualIndex={actualIndex}
+                item={item} 
+                index={i}
+                onHandlePinned={handlePinned}
+                onHandleSelectMemo={handleSelectMemo}
+              />
             })
           }
         </List>
       </Panel>
       <>
-        <Editor />
-        <Preview />
+        {
+          (actualIndex >= 0) ? renderEditorUI() : ''
+        }
       </>
     </div>
   );
