@@ -7,6 +7,7 @@ import Memo from './components/Memo';
 import Editor from './components/Editor';
 import Preview from './components/Preview';
 import { v4 as uuidv4 } from 'uuid';
+import ItemsContext from './items-context';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -131,7 +132,9 @@ function App() {
   return (
     <div className='App container'>
       <Panel>
-        <Menu onNew={handleNew} onSearch={handleSearch} />
+        <ItemsContext.Provider value={{onSearch:handleSearch, onNew:handleNew}}>
+          <Menu onNew={handleNew} onSearch={handleSearch} />
+        </ItemsContext.Provider>
         <List>
           {
             copyItems.map((item, i) => {
