@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/memo-pad/static/css/main.22f3184e.css",
+    "main.js": "/memo-pad/static/js/main.5170ccdf.js",
+    "index.html": "/memo-pad/index.html",
+    "main.22f3184e.css.map": "/memo-pad/static/css/main.22f3184e.css.map",
+    "main.5170ccdf.js.map": "/memo-pad/static/js/main.5170ccdf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22f3184e.css",
+    "static/js/main.5170ccdf.js"
+  ]
+}
